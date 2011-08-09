@@ -9,13 +9,15 @@ require_once implode(DIRECTORY_SEPARATOR, array(
 <head>
     <title>Foodalizr</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="stylesheet" type="text/css" href="css/screen.css" />
 </head>
 <body>
 
-<p>
-    <button class="add meal-add">Essen</button>
-    <button class="add person-add">Person</button>
-</p>
+<ul class="nav">
+    <li><a href="#" class="add meal-add">Essen</a></li>
+    <li><a href="#" class="add person-add">Person</a></li>
+</ul>
 
 <div id="person-add-dialog" title="Person hinzufügen">
 <form>
