@@ -11,6 +11,11 @@ $db = new \mysqli($config['db']['host'], $config['db']['user'],
 $db->query('SET NAMES utf8;');
 $mapperFactory = new \Foodalizr\Model\MapperFactory($db);
 
+$router = new \Knid\Routing\Router();
+$router->addRoute(new \Knid\Routing\Route('/person/post', array(
+    'controller' => '\\Foodalizr\\Controller\\Person',
+)));
+
 $request = new \Knid\Http\Request(array(
     'cookie' => $_COOKIE,
     'env' => $_ENV,
@@ -20,6 +25,9 @@ $request = new \Knid\Http\Request(array(
     'server' => $_SERVER,
 ));
 $response = new \Knid\Http\Response();
+
+$routeParams = $router->route($request);
+
 $response->addHeader(new \Knid\Http\Header('Content-Type', 'text/html; charset=utf-8'));
 $response->setContent('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
