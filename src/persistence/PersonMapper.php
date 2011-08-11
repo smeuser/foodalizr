@@ -2,7 +2,7 @@
 
 namespace Foodalizr\Model;
 
-class PersonMapper extends MapperAbstract
+class PersonMapper extends \Knid\Mapper
 {
     /**
      * @return string

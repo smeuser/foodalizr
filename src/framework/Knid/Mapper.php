@@ -1,8 +1,8 @@
 <?php
 
-namespace Foodalizr\Model;
+namespace Knid;
 
-abstract class MapperAbstract
+abstract class Mapper
 {
     /**
      * @var \mysqli
