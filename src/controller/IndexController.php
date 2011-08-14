@@ -49,7 +49,7 @@ $(function() {
 </p>
 
 <div id="person-add-dialog" title="Person hinzufügen">
-<form>
+<form action="' . dirname($_SERVER['SCRIPT_NAME']) . '/person/post" method="post">
     <label for="person-name">Name</label>
     <input type="text" name="name" id="person-name" />
 </form>
