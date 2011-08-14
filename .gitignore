@@ -1,5 +1,9 @@
 .buildpath
 .project
 .settings
+build.properties
+*.cache.properties
+liquibasetasks.properties
 lib/*.jar
+lib/sencha-touch/*
 /build
