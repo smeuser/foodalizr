@@ -1,6 +1,8 @@
 # lib
 
 Libraries for ant
+For SCP on Windows Java Secure Channel is needed (http://www.jcraft.com/jsch/)
+For FTP on Windows you need the commons.net library (http://commons.apache.org/net/)
 
 ## Liquibase
 
