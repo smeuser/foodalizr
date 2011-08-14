@@ -3,6 +3,7 @@
 namespace Foodalizr\Controller;
 
 use Knid\Http;
+use Knid\Json;
 
 use Foodalizr\Model;
 
@@ -18,7 +19,7 @@ class PersonController extends \Knid\Controller
             $personMapper = $this->getMapper('\\Foodalizr\\Mapper\\PersonMapper');
             $personMapper->save($person);
             
-            $response->setContent(json_encode($person));
+            $response->setContent(new Json\Model($person));
         }
         catch (\OutOfBoundsException $e) {
             $reponse->setContent(json_encode($e));
