@@ -1,11 +1,11 @@
 <?php
 
-namespace Foodalizr\Model;
+namespace Knid\Mapper;
 
-class MapperFactory
+class Factory
 {
     /**
-     * @var mysqli
+     * @var \mysqli
      */
     private $db;
     
@@ -14,6 +14,9 @@ class MapperFactory
      */
     private $mappers = array();
     
+    /**
+     * @param \mysqli $db
+     */
     public function __construct(\mysqli $db)
     {
         $this->db = $db;
@@ -21,7 +24,7 @@ class MapperFactory
     
     /**
      * @param string $mapperName
-     * @return MapperAbstract
+     * @return \Knid\Mapper
      */
     public function getMapper($mapperName)
     {

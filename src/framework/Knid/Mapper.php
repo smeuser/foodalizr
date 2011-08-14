@@ -1,8 +1,8 @@
 <?php
 
-namespace Foodalizr\Model;
+namespace Knid;
 
-abstract class MapperAbstract
+abstract class Mapper
 {
     /**
      * @var \mysqli
@@ -26,7 +26,9 @@ abstract class MapperAbstract
     }
     
     /**
+     * Returns the table of the entity to persist
+     * 
      * @return string
      */
-    abstract protected function getDbName();
+    abstract protected function getTableName();
 }
