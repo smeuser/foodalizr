@@ -28,8 +28,15 @@ $(function() {
         autoOpen : false,
         buttons: {
             "Hinzufügen" : function() {
-                $(this).find("form").submit();
-                $(this).dialog("close");
+                // $(this).find("form").submit();
+                $.ajax({
+                    type: "POST",
+                    url: "' . dirname($request->getServer('SCRIPT_NAME')) . '/person/post",
+                    data: {"name":"Max Mustermann"},
+                    success: function(data) { console.log(data); },
+                    dataType: "json"
+                });
+                { $(this).dialog("close") }
             }
         },
         modal : true,
@@ -49,7 +56,7 @@ $(function() {
 </p>
 
 <div id="person-add-dialog" title="Person hinzufügen">
-<form action="' . dirname($_SERVER['SCRIPT_NAME']) . '/person/post" method="post">
+<form action="' . dirname($request->getServer('SCRIPT_NAME')) . '/person/post" method="post">
     <label for="person-name">Name</label>
     <input type="text" name="name" id="person-name" />
 </form>
