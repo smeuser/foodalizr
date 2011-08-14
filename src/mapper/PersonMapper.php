@@ -1,8 +1,9 @@
 <?php
 
-namespace Foodalizr\Model;
+namespace Foodalizr\Mapper;
 
 use Knid\Mapper;
+use Foodalizr\Model;
 
 class PersonMapper extends Mapper
 {
@@ -25,7 +26,7 @@ class PersonMapper extends Mapper
      * @param \Foodalizr\Model\Person $person
      * @return \Foodalizr\Model\Person
      */
-    public function save(Person $person)
+    public function save(Model\Person $person)
     {
         if (null === $person->getId()) {
             $sql = 'INSERT INTO `' . $this->getTableName() . '` (`name`) VALUES (\''
