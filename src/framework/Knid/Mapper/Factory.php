@@ -26,7 +26,7 @@ class Factory
      * @param string $mapperName
      * @return \Knid\Mapper
      */
-    public function getMapper(\Knid\Mapper $mapperName)
+    public function getMapper($mapperName)
     {
         if (!isset($this->mappers[$mapperName])) {
             $this->mappers[$mapperName] = new $mapperName($this->db);

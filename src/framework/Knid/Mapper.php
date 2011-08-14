@@ -26,7 +26,9 @@ abstract class Mapper
     }
     
     /**
+     * Returns the table of the entity to persist
+     * 
      * @return string
      */
-    abstract protected function getDbName();
+    abstract protected function getTableName();
 }
