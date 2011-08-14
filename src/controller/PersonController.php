@@ -22,7 +22,7 @@ class PersonController extends \Knid\Controller
             $response->setContent(new Json\Model($person));
         }
         catch (\OutOfBoundsException $e) {
-            $reponse->setContent(json_encode($e));
+            $response->setContent(json_encode($e));
         }
         
         return $response;
