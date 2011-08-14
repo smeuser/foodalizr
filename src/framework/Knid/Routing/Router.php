@@ -30,7 +30,7 @@ class Router
     public function route(\Knid\Http\Request $request)
     {
         $requestUri = $request->getServer('REQUEST_URI');
-        $requestUri = substr($requestUri, strlen(dirname($_SERVER['SCRIPT_NAME'])));
+        $requestUri = '/' . substr($requestUri, strlen(dirname($_SERVER['SCRIPT_NAME'])));
         
         foreach ($this->routes as $route) {
             if ($routeParams = $route->match($requestUri)) {
