@@ -15,14 +15,20 @@ class Factory
      * @var \Knid\Mapper\Factory
      */
     private $mapperFactory;
+
+    /**
+     * @var \Knid\View\Factory
+     */
+    private $viewFactory;
     
     /**
      * @param \Knid\Mapper\Factory $mapperFactory
      */
-    public function __construct(\Knid\Mapper\Factory $mapperFactory)
+    public function __construct(\Knid\Mapper\Factory $mapperFactory, \Knid\View\Factory $viewFactory)
     {
         $this->controllers = array();
         $this->mapperFactory = $mapperFactory;
+        $this->viewFactory = $viewFactory;
     }
     
     /**
