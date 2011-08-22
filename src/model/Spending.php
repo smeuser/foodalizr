@@ -2,80 +2,33 @@
 
 namespace Foodalizr\Model;
 
-class Spending
+use Foodalizr\Model;
+
+class Spending extends Model\Transaction
 {
     /**
      * @var int
      */
-    private $id;
-
-    /**
-     * @var int
-     */
-    private $personId;
-
-    /**
-     * @var Decimal
-     */
-    private $amount;
-
+    private $mealId;
+    
     /**
      * @return int
      */
-    public function getId()
+    public function getMealId()
     {
-        return $this->id;
+        return $this->mealId;
     }
-
+    
     /**
-     * @param int $id
-     * @return Contribution
+     * @param int $mealId
+     * @return \Foodalizr\Model\Spending
      */
-    public function setId($id)
+    public function setMealId($mealId)
     {
-        if (null !== $id) {
-            $id = (int) $id;
+        if (null !== $mealId) {
+            $mealId = (int) $mealId;
         }
-        $this->id = $id;
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getPersonId()
-    {
-        return $this->personId;
-    }
-
-    /**
-     * @param int $personId
-     * @return Contribution
-     */
-    public function setPersonId($personId)
-    {
-        if (null !== $personId) {
-            $personId = (int) $personId;
-        }
-        $this->personId = $personId;
-        return $this;
-    }
-
-    /**
-     * @return Decimal
-     */
-    public function getAmount()
-    {
-        return $this->amount;
-    }
-
-    /**
-     * @param Decimal $amount
-     * @return Contribution
-     */
-    public function setAmount(Decimal $amount)
-    {
-        $this->amount = $amount;
+        $this->mealId = $mealId;
         return $this;
     }
 }
