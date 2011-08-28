@@ -5,6 +5,7 @@ spl_autoload_register(
       if ($classes === null) {
          $classes = array(
             'foodalizr\\controller\\indexcontroller' => '/controller/IndexController.php',
+            'foodalizr\\controller\\apicontroller' => '/controller/ApiController.php',
             'foodalizr\\controller\\mealcontroller' => '/controller/MealController.php',
             'foodalizr\\controller\\personcontroller' => '/controller/PersonController.php',
             'foodalizr\\mapper\\personmapper' => '/mapper/PersonMapper.php',

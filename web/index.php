@@ -15,9 +15,27 @@ $router->addRoute(new \Knid\Routing\Route('/person/post', array(
     'controller' => '\\Foodalizr\\Controller\\Person',
     'action' => 'post',
 )));
+$router->addRoute(new \Knid\Routing\Route('/api/create', array(
+    'controller' => '\\Foodalizr\\Controller\\Api',
+    'action' => 'create',
+)));
+$router->addRoute(new \Knid\Routing\Route('/api/edit', array(
+    'controller' => '\\Foodalizr\\Controller\\Api',
+    'action' => 'edit',
+)));
+$router->addRoute(new \Knid\Routing\Route('/api/delete', array(
+    'controller' => '\\Foodalizr\\Controller\\Api',
+    'action' => 'delete',
+)));
+$router->addRoute(new \Knid\Routing\Route('/api/view', array(
+    'controller' => '\\Foodalizr\\Controller\\Api',
+    'action' => 'view',
+)));
+$router->addRoute(new \Knid\Routing\Route('/api/list', array(
+    'controller' => '\\Foodalizr\\Controller\\Api',
+    'action' => 'list',
+)));
 
-$db = new \mysqli($config['db']['host'], $config['db']['user'],
-    $config['db']['password'], $config['db']['name']);
 $db->query('SET NAMES utf8;');
 $mapperFactory = new \Knid\Mapper\Factory($db);
 
