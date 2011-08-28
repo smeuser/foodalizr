@@ -39,7 +39,9 @@ $router->addRoute(new \Knid\Routing\Route('/api/list', array(
 $db->query('SET NAMES utf8;');
 $mapperFactory = new \Knid\Mapper\Factory($db);
 
-$controllerFactory = new \Knid\Controller\Factory($mapperFactory);
+$viewFactory = new \Knid\View\Factory();
+
+$controllerFactory = new \Knid\Controller\Factory($mapperFactory, $viewFactory);
 
 $fontController = new \Knid\Controller\Front($router, $controllerFactory);
 
@@ -52,5 +54,5 @@ $request = new \Knid\Http\Request(array(
     'server' => $_SERVER,
 ));
 $response = new \Knid\Http\Response();
-
 $fontController->dispatch($request, $response);
+
