@@ -36,6 +36,13 @@ $router->addRoute(new \Knid\Routing\Route('/api/list', array(
     'action' => 'list',
 )));
 
+$db = new \mysqli(
+	$config['db']['host'],
+	$config['db']['user'],
+	$config['db']['password'],
+	$config['db']['name']
+);
+
 $db->query('SET NAMES utf8;');
 $mapperFactory = new \Knid\Mapper\Factory($db);
 
