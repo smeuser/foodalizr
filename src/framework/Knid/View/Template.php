@@ -13,6 +13,14 @@ class Template extends \Knid\View
     
     /**
      * @param File $template
+     */
+    public function __construct(File $template)
+    {
+        $this->template = $template;
+    }
+    
+    /**
+     * @param File $template
      * @return View
      */
     public function setTemplate(File $template)
