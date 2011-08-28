@@ -25,6 +25,21 @@ class Request
      * @throws \OutOfBoundsException
      * @param string $type
      * @param string $name
+     * @param mixed $value
+     * @return void
+     */
+    private function setParam($type, $name, $value)
+    {
+        if (!isset($this->params[$type])) {
+            throw new \OutOfBoundsException();
+        }
+        $this->params[$type][$name] = $value;
+    }
+    
+    /**
+     * @throws \OutOfBoundsException
+     * @param string $type
+     * @param string $name
      * @return string
      */
     private function getParam($type, $name)
@@ -33,6 +48,26 @@ class Request
             throw new \OutOfBoundsException();
         }
         return $this->params[$type][$name];
+    }
+    
+    /**
+     * @param array $params
+     * @return void
+     */
+    public function addGetParams($params) {
+    	$keys = array();
+    	$values = array();
+
+    	$counter = 0;
+    	foreach($params as $param) {
+    		if($counter++ % 2 == 0) {
+    			$keys[] = $param;
+    		}
+    		else {
+    			$values[] = $param;
+    			$this->setParam('get', array_pop($keys), array_pop($values));
+    		}
+    	}
     }
     
     /**

@@ -31,11 +31,19 @@ class Router
     {
         $requestUri = $request->getServer('REQUEST_URI');
         $requestUri = '/' . substr($requestUri, strlen(dirname($_SERVER['SCRIPT_NAME'])));
-        
-        foreach ($this->routes as $route) {
-            if ($routeParams = $route->match($requestUri)) {
-                return $routeParams;
-            }
+        $requestParams = array();
+
+        while(count(explode('/', $requestUri)) > 1) {
+	        foreach ($this->routes as $route) {
+	            if ($routeParams = $route->match($requestUri)) {
+	            	$routeParams['params'] = array_filter($requestParams);
+	                return $routeParams;
+	            }
+	        }
+	        
+        	$requestUriArr = explode('/', $requestUri);
+        	array_unshift($requestParams, array_pop($requestUriArr));
+        	$requestUri = implode('/', $requestUriArr);
         }
         throw new Exception();
     }

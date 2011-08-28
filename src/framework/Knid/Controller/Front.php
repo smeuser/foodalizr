@@ -37,6 +37,11 @@ class Front
         $actionController = $this->controllerFactory->getController($routeParams['controller']);
         
         $actionName = $routeParams['action'] . 'Action';
+        
+        if(isset($routeParams['params'])) {
+        	$request->addGetParams($routeParams['params']);
+        }
+        
         $response = $actionController->$actionName($request, $response);
         
         $response->send();
