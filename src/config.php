@@ -2,9 +2,9 @@
 
 return array(
     'db' => array(
-        'host' => 'localhost',
-        'user' => 'foodalizr',
-        'password' => '',
-        'name' => 'foodalizr_development',
+        'host' => 'sql09.freemysql.net',
+        'user' => 'lopezt',
+        'password' => 'foodyfoody',
+        'name' => 'foodalizr',
     )
 );
