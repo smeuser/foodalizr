@@ -17,6 +17,7 @@ spl_autoload_register(
             'knid\\controller' => '/framework/Knid/Controller.php',
             'knid\\controller\\factory' => '/framework/Knid/Controller/Factory.php',
             'knid\\controller\\front' => '/framework/Knid/Controller/Front.php',
+            'knid\\helper\\content\\type\\factory' => '/framework/Knid/Helper/Content/Type/Factory.php',
             'knid\\http\\header' => '/framework/Knid/Http/Header.php',
             'knid\\http\\request' => '/framework/Knid/Http/Request.php',
             'knid\\http\\response' => '/framework/Knid/Http/Response.php',
