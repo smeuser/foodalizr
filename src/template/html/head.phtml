@@ -1,0 +1,10 @@
+<head>
+	<title><?php echo $this->{title} ?></title>
+	<meta http-equiv="Content-Type" content="<?php echo $this->{contentType} ?>" />
+	<?php foreach($this->{cssFiles} as $cssFile): ?>
+	<link rel="stylesheet" type="text/css" href="<?php echo $cssFile ?>" />
+	<?php endforeach; ?>
+	<?php foreach($this->{jsFiles} as $jsFile): ?>
+	<script type="text/javascript" src="<?php echo $jsFile ?>"></script>
+	<?php endforeach; ?>
+</head>
